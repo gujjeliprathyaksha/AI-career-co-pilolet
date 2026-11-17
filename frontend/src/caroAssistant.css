@@ -1,0 +1,465 @@
+.caro-assistant {
+  position: relative;
+  z-index: 60;
+}
+
+.caro-launcher {
+  position: fixed;
+  right: 28px;
+  bottom: 24px;
+  z-index: 62;
+  width: 62px;
+  height: 62px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d9edf1;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #65b8d3, #4c9fbe);
+  box-shadow: 0 10px 28px #397f9b38, 0 0 0 6px #e8f5f788;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.caro-launcher:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 31px #397f9b4a, 0 0 0 7px #e8f5f7;
+}
+
+.caro-launcher.is-open {
+  width: 48px;
+  height: 48px;
+  right: 35px;
+  bottom: 31px;
+}
+
+.caro-launcher .robot-wrap.small {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -112px 0 0 -110px;
+  transform: scale(.27);
+  transform-origin: center;
+  animation: none;
+}
+
+.caro-launcher-sparkle {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #e9b95e;
+}
+
+.caro-panel {
+  position: fixed;
+  right: 28px;
+  bottom: 100px;
+  z-index: 61;
+  width: min(410px, calc(100vw - 36px));
+  height: min(690px, calc(100dvh - 128px));
+  min-height: 410px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #dfeaf0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 72px #27485d2e, 0 3px 14px #27485d10;
+}
+
+.caro-panel-header {
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid #edf2f4;
+  background: linear-gradient(110deg, #f9fdfe, #f1f8fa);
+}
+
+.caro-panel-avatar {
+  width: 39px;
+  height: 39px;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 39px;
+  border-radius: 50%;
+  background: #e2f2f5;
+}
+
+.caro-panel-avatar .robot-wrap.small {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -112px 0 0 -110px;
+  transform: scale(.19);
+  transform-origin: center;
+  animation: none;
+}
+
+.caro-panel-identity {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.caro-panel-identity b {
+  color: #28495f;
+  font: 750 15px var(--head);
+}
+
+.caro-panel-identity small {
+  color: #8496a2;
+  font-size: 9px;
+}
+
+.caro-panel-identity i {
+  margin-left: 5px;
+  color: #4ea58f;
+  font-size: 9px;
+  font-style: normal;
+}
+
+.caro-panel-new,
+.caro-panel-close {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e6eef1;
+  border-radius: 10px;
+  color: #638295;
+  background: #fff;
+}
+
+.caro-panel-new:hover,
+.caro-panel-close:hover {
+  color: #3688a7;
+  background: #f2fafb;
+}
+
+.caro-panel-context {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 16px;
+  border-bottom: 1px solid #f0f4f5;
+  color: #6f8896;
+  font-size: 9px;
+}
+
+.caro-panel-context span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caro-panel-context i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #62b89e;
+  box-shadow: 0 0 0 3px #62b89e20;
+}
+
+.caro-panel-context small {
+  max-width: 54%;
+  overflow: hidden;
+  color: #91a1ab;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.caro-panel-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px 13px 10px;
+  scroll-behavior: smooth;
+}
+
+.caro-panel-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0 0 11px;
+}
+
+.caro-message-mark {
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #4e9ab2;
+  background: #e9f5f7;
+  font-size: 12px;
+}
+
+.caro-panel-message > div {
+  max-width: 88%;
+  padding: 10px 12px;
+  border: 1px solid #e8f0f2;
+  border-radius: 4px 13px 13px;
+  background: #f8fbfc;
+}
+
+.caro-panel-message p {
+  margin: 0;
+  color: #536c7b;
+  font-size: 11px;
+  line-height: 1.62;
+  white-space: pre-wrap;
+}
+
+.caro-replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 7px;
+  padding: 0;
+  border: 0;
+  color: #7c98a5;
+  background: transparent;
+  font-size: 9px;
+}
+
+.caro-replay:hover {
+  color: #347f9c;
+}
+
+.caro-panel-message.user {
+  justify-content: flex-end;
+}
+
+.caro-panel-message.user > div {
+  border-color: #e0f0f4;
+  border-radius: 13px 4px 13px 13px;
+  background: #edf7fa;
+}
+
+.caro-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: #347f9c;
+  background: #e5f3f6;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.caro-thinking {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #708894;
+  font-size: 10px;
+}
+
+.caro-thinking i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #70bdba;
+  animation: caro-dot 1s infinite alternate;
+}
+
+.caro-thinking i:nth-child(2) { animation-delay: .2s; }
+.caro-thinking i:nth-child(3) { animation-delay: .4s; }
+
+.caro-welcome {
+  padding: 10px 14px 12px;
+  border-top: 1px solid #eff4f5;
+  background: #fbfdfe;
+}
+
+.caro-welcome > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #557182;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.caro-welcome > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.caro-welcome button,
+.caro-quick-actions button {
+  border: 1px solid #e2edf0;
+  border-radius: 20px;
+  color: #5d7888;
+  background: #fff;
+  font-size: 9px;
+  transition: .18s;
+}
+
+.caro-welcome button {
+  padding: 6px 9px;
+}
+
+.caro-welcome button:hover,
+.caro-quick-actions button:hover:not(:disabled) {
+  border-color: #b9dce5;
+  color: #347f9c;
+  background: #f2fafb;
+}
+
+.caro-quick-actions {
+  padding: 9px 14px 8px;
+  border-top: 1px solid #f0f4f5;
+}
+
+.caro-quick-actions > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 7px;
+  color: #8a9ca6;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .65px;
+}
+
+.caro-quick-actions > span svg {
+  color: #6caeb8;
+}
+
+.caro-quick-actions > div {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 3px;
+  scrollbar-width: thin;
+}
+
+.caro-quick-actions button {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 5px;
+  padding: 6px 9px;
+}
+
+.caro-quick-actions button:disabled {
+  opacity: .55;
+}
+
+.caro-panel-composer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid #e9f0f2;
+  background: #fff;
+}
+
+.caro-panel-composer > button {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e6eef1;
+  border-radius: 10px;
+  color: #658496;
+  background: #fff;
+}
+
+.caro-panel-composer input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #e7eef1;
+  border-radius: 10px;
+  outline: none;
+  color: #405c6d;
+  background: #f9fbfc;
+  font-size: 11px;
+}
+
+.caro-panel-composer input:focus {
+  border-color: #acd2de;
+  box-shadow: 0 0 0 3px #dff0f4;
+}
+
+.caro-panel-composer .caro-panel-send {
+  color: #fff;
+  border-color: transparent;
+  background: #58a7bd;
+}
+
+.caro-panel-composer .caro-panel-send:disabled {
+  background: #b9cbd1;
+  cursor: default;
+}
+
+.caro-listening-note {
+  margin: 0;
+  padding: 7px 14px 0;
+  color: #438c8b;
+  background: #fff;
+  font-size: 9px;
+}
+
+.caro-panel-audio {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 7px;
+  background: #fff;
+}
+
+.caro-panel-audio button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  color: #8297a3;
+  background: transparent;
+  font-size: 8px;
+}
+
+@keyframes caro-dot {
+  to { opacity: .35; transform: translateY(-2px); }
+}
+
+@media (max-width: 760px) {
+  .caro-launcher {
+    right: 17px;
+    bottom: 17px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .caro-launcher.is-open {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .caro-panel {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: min(88dvh, 760px);
+    min-height: min(480px, 80dvh);
+    border-radius: 21px 21px 0 0;
+  }
+}
