@@ -1,24 +1,50 @@
-# CareerPilot
+# 🚀 AI Career Copilot
 
-CareerPilot is a responsive AI career companion for planning a career path, practicing interviews, improving resume content, and building portfolio projects.
+AI Career Copilot is an intelligent AI-powered career companion designed to help job seekers plan their careers, improve resumes, practice interviews, and build professional portfolios.
 
-## Run locally
+## ✨ Features
 
-1. Install dependencies with `npm install`.
-2. Copy `backend/.env.example` to `backend/.env`. Set `AI_API_KEY` to enable provider responses; leave it blank to use the included mock responses.
-3. In one terminal, run `npm run server` to start the Express API on port 3001.
-4. In another terminal, run `npm run dev` and open the Vite URL shown in the terminal.
+- 🤖 AI Career Assistant
+- 📄 AI Resume Improvement
+- 🎤 AI Mock Interview Practice
+- 🗺️ Personalized Career Roadmaps
+- 💡 Portfolio Project Recommendations
+- 🎯 Skill Recommendations
+- 🔊 Voice Interaction Support
+- 📱 Responsive User Interface
 
-Vite proxies `/api` requests to the local Express server. For a separate frontend host, set `VITE_API_URL` to the API origin before building.
+## 🛠️ Technologies Used
 
-## API
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Node.js
+- Express.js
+- Vite
+- AI API Integration
 
-- `POST /api/chat` — message plus recent history
-- `POST /api/interview` — evaluate an interview response
-- `POST /api/resume` — improve a resume statement
-- `POST /api/roadmap` — generate a career roadmap
-- `POST /api/project` — generate a portfolio project
-- `POST /api/recommendation` — recommend a next skill
-- `GET /api/health` — health check
+## 📁 Project Structure
 
-AI provider configuration stays on the backend. The browser uses speech recognition where available and optional browser text-to-speech.
+- `backend/` – Express API and AI services
+- `frontend/` – React application
+- `package.json` – Dependencies and scripts
+- `README.md` – Project documentation
+
+## ⚙️ How to Run Locally
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Configure `backend/.env` using `backend/.env.example`.
+4. Start the backend using `npm run server`.
+5. Start the frontend using `npm run dev`.
+
+## 🎯 Project Objective
+
+To make career development easier through AI-powered guidance, personalized learning, resume improvement, and interview preparation.
+
+## 👩‍💻 Developer
+
+Developed as an AI-powered web development project.
+
+**AI Career Copilot – Your Smart Partner for Career Growth!** 🚀
